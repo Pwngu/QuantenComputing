@@ -24,8 +24,10 @@ Das größte Problem des One-Time-Pads ist es allerdings, den geheimen Schlüsse
 
 Als Quantenschlüsselaustausch bezeichnet man Verfahren der Quanteninformatik, die Eigenschaften der Quantenmechanik nutzen, um zwei Parteien eine gemeinsame Zufallszahl zur Verfügung zu stellen.
 Dies löst nun das größte Problem des One-Time-Pad, nämlich die sichere Übertragung des Schlüssels.
+Er hat Grundlegend nichts mit Quantencomputern zu tun und benötigt auch keinen um durchgeführt zu werden.
+Erste Theorien über den Quantenschlüsselaustausch wurden bereits 1984 Aufgestellt und 2004 ein erster Banktransfer über einen durch einen Quantenschlüsselaustausch erstellten Schlüssel getätigt \cite{experiement_qsa}
 
-Der Quantenschlüsselaustausch funktioniert nach dem Prinzip, einen Angreifer (Man in the Middle) bei der Schlüsselgenerierung zu erkennen, da eine Messung eines Quantenmechanischen Zustandes, immer den Wert verändert.
+Der Quantenschlüsselaustausch funktioniert durch das No-Cloning-Theorems nach dem Prinzip, einen Angreifer (Man in the Middle) bei der Schlüsselgenerierung zu erkennen, da eine Messung eines Quantenmechanischen Zustandes, immer den Wert verändert.
 
 \subsubsection{Funktionsweise}
 
@@ -87,10 +89,11 @@ In diesem Beispiel sind die \textbf{Fett} hervorgehoben Basen gleich, also wäre
 
 \subsubsection{Abhörsicherheit}
 
-Bei dem obigen Verfahren ist es nun auch möglich Abhöhrsicherheit zu garantieren, sodass eine dritte Person (Eve) sich nich zwischen die Kommunikation schalten und den Schlüsselaustausch abfangen kann.
+Bei dem obigen Verfahren ist es nun auch möglich Abhörsicherheit zu garantieren, sodass eine dritte Person (Eve) sich nich zwischen die Kommunikation schalten und den Schlüsselaustausch abfangen kann.
 Um die Kommunikation abzufangen kann Eve sich nun zwischen Bob und Alice schalten und auch rein zufällig eine Basis wählen und das Photon messen.
 Eve muss allerdings sofort wieder ein neues Photon an Bob senden, in 50\% der Fälle wählt Eve zur Messung jedoch die falsche Basis und sendet dadurch ein falsches bit an Bob.
 Diesen durch Eve verursachten Fehler können Alice und Bob nun bemerken, wenn Alice und Bob die gleiche Basis gewählt haben, sie bei gleicher Wahl der Basis immer eindeutige Ergebnisse erhalten sollten.
+Außerdem kann Eve so nie den kompletten Schlüssel bekommen, da sie das bit an einer Stelle bei der sie eine falsche Basis verwendet hat, nicht herausfinden kann.
 
 \begin{table}[ht]    \centering    \begin{tabular}{|c|c|c|c|c|}
     \hline
@@ -121,6 +124,8 @@ Damit also momentane Kommunikation auch in Zukunft nicht entschlüsselt werden k
 
 \subsection{Besonderheiten und Unterschiede zu 'klassischer' Algorithmik}
 \label{sec:Besonderheiten und Unterschiede zu klassischer Algorithmik}
+
+Ein Quantenalgorithmus ist ein 
 
 
 \subsection{Quantenalgorithmik Übersicht}
