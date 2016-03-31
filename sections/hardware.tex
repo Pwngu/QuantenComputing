@@ -18,9 +18,9 @@ Wenn nun die Kiste geöffnet wird und der Betrachter einen Blick ins innere der 
 
 \subsubsection{Definition}
 
-Per Definition werden die Zustände eines Quantenbits in der Form \%alpha * |0> + \%beta * |1> angeschrieben.
-%\%alpha und \%beta werden ''Amplituden'' genannt, sind komplexe Zahlen und durch die Formel |\%alpha|^2 + |\%beta|^2 = 1 voneinander abhängig.
-%Anders als ein klassisches Bit, kann ein Qubit nicht gelesen, sondern muss gemessen werden, wobei die Superposition zerstört wird und anhand der Amplituden (die einen Anteil darstellen) folgendermaßen berechnet werden kann, mit welcher Wahrscheinlichkeit sich das Qubit in welchem Zustand befindet: P(|0>) = |\%alpha|^2, P(|1>) = |\%beta|^2
+Per Definition werden die Zustände eines Quantenbits in der Form $\alpha * |0\rangle + \beta * |1\rangle$ angeschrieben.
+$\alpha$ und $\beta$ werden ''Amplituden'' genannt, sind komplexe Zahlen und durch die Formel $|\alpha|^2 + |\beta|^2 = 1$ voneinander abhängig.
+Anders als ein klassisches Bit, kann ein Qubit nicht gelesen, sondern muss gemessen werden, wobei die Superposition zerstört wird und anhand der Amplituden (die einen Anteil darstellen) folgendermaßen berechnet werden kann, mit welcher Wahrscheinlichkeit sich das Qubit in welchem Zustand befindet: $P(|0\rangle) = |\alpha|^2, P(|1\rangle) = |\beta|^2$
 
 \subsubsection{Messung}
 
@@ -35,13 +35,27 @@ Die Messung erfolgt je nach Ausführung des Quantenbits, da es auf mehrere Arten
 \subsubsection{Definition}
 (formeln auf seite 28)
 
-Ein Quantenregister besteht aus einer Reihe von 2 bis n Qubits und wird angeschrieben als -formel 1-
+Ein Quantenregister besteht aus einer Reihe von 2 bis n Qubits und wird angeschrieben als $R = |x_1\ranlge|x_0\rangle$
 Zur Erklärung ist allerdings eine Beschränkung auf das Minumum von 2 Bits sinnvoll.
 
 \subsubsection{Berechnung}
 
 Die Berechnung des Zustands eines Quantenregisters mit 2 Bit sieht folgendermaßen aus:
--formel 2,3-
+\begin{itemize}
+    \item $|x_0\ranlge = \gamma|0\rangle + \gamma_1\rangle, |x_1\ranlge = \beta|0\rangle + \beta|1\rangle$
+    \item $R = |x_1\ranlge|x_0\rangle$
+	\item[=] $(\beta_0|0\rangle+\beta_1|1\rangle)(\gamma_0|0\rangle+\gamma_1|1\rangle)$
+	\item[=] $\beta_0\gamma_0|0\rangle|0\rangle+\beta_0\gamma_1|0\rangle|1\rangle+\beta_1\gamma_0|1\rangle|0\rangle+\beta_1\gamma_1|1\rangle|1\rangle$
+\end{itemize}
+
+Zur Übersichtlichkeit wird angenommen, das
+\begin{itemize}
+	\item $\alpha_{i,j} = \beta_i\gamma_j$ und
+	\item $|x_1\rangle|x_0\rangle = |x_1 x_0\rangle$
+\end{itemize}
+sowie die Ziffern vom binären ins dezimale Zahlensystem umgerechnet, wodurch folgende Schreibweise zustande kommt:
+
+$R = \alpha_0|0\rangle+\alpha_1|1\rangle+\alpha_2|2\rangle+\alpha_3|3\rangle$
 
 \subsubsection{Zustände}
 
@@ -64,10 +78,12 @@ Ein CNOT hat 2 Eingänge und 2 Ausgänge, wobei der zweite Ausgang den invertier
 
 Definition von David Deutsch 1985:
 Ein Quantencomputer besteht aus einer Reihe von Quantenbits,
-1. die in einen Anfangszustand versetzt werden können,
-2. die Information robust speichern,
-3. auf die (universelle) Quantengatter anwendbar sind und
-4. die gemessen werden können.
+\begin{enumerate}
+	\item die in einen Anfangszustand versetzt werden können,
+	\item die Information robust speichern,
+	\item auf die (universelle) Quantengatter anwendbar sind und
+	\item die gemessen werden können.
+\end{enumerate}
 
 \subsubsection{(De)kohärenz}
 
@@ -84,7 +100,7 @@ Wenn anstelle eines Lichtstrahles nur einzelne Photonen verwendet werden, zeigt 
 
 \subsubsection{Kernspinresonanz}
 
-%Kernspinresonanz ist der Name für einen phyiskalischen Effekt der in Form von Wechselwirkung zwischen Atomkernen und Magnetfeldern auftritt. Der Spin eines Moleküls kann durch Magnetfelder ausgerichtet werden, was ausgenutzt wird, um Quantenbits abzubilden und zu speichern. Durch unterschiedliche chemische Eigenschaften der Umgebung kann jedes Bit einzeln angesprochen werden. Mithilfe eines Hauptmagnetfeldes kann man die Zustande definieren, zum Beispiel als: gleiche Ausrichtung = |0>, im rechten Winkel = |1>;
+Kernspinresonanz ist der Name für einen phyiskalischen Effekt der in Form von Wechselwirkung zwischen Atomkernen und Magnetfeldern auftritt. Der Spin eines Moleküls kann durch Magnetfelder ausgerichtet werden, was ausgenutzt wird, um Quantenbits abzubilden und zu speichern. Durch unterschiedliche chemische Eigenschaften der Umgebung kann jedes Bit einzeln angesprochen werden. Mithilfe eines Hauptmagnetfeldes kann man die Zustande definieren, zum Beispiel als: $gleiche Ausrichtung = |0\rangle, im rechten Winkel = |1\rangle$;
 
 \subsubsection{Ionenfallen}
 
