@@ -1,13 +1,13 @@
 %!TEX root=../document.tex
 
-\section{Hardware-Aufbau}
-\label{sec:Hardware-Aufbau}
-
+\section{Grundlagen}
+\label{sec:grundlagen}
 
 \subsection{Qubit}
-\label{sec:Qubit}
+\label{sec:qubit}
 
 \subsubsection{Schrödinger}
+\label{sec:schrodinger}
 
 Schroedingers Katze ist die berühmteste Veranschaulichung eines grundlegenden Phänomens der Quantenmechanik. Genaugenommen ist es ein Versuchsaufbau, anhand dessen sich verschiedene Begriffe der Quantenmechanik leicht erklären lassen. Der Versuchsaufbau sieht folgendermaßen aus:
 
@@ -17,28 +17,43 @@ Den Umstand, dass 2 (oft gegensätzliche) Zustände wahr sind, wird in der Quant
 Wenn nun die Kiste geöffnet wird und der Betrachter einen Blick ins innere der Kiste wirft, so erkennt er ziemlich schnell, ob die Katze tot oder lebendig ist. Einer der Beiden Zustände ist durch diese sogenannte Messung verloren gegangen.
 
 \subsubsection{Definition}
+\label{sec:bit_definition}
 
 Per Definition werden die Zustände eines Quantenbits in der Form $\alpha * |0\rangle + \beta * |1\rangle$ angeschrieben.
 $\alpha$ und $\beta$ werden ''Amplituden'' genannt, sind komplexe Zahlen und durch die Formel $|\alpha|^2 + |\beta|^2 = 1$ voneinander abhängig.
+
 Anders als ein klassisches Bit, kann ein Qubit nicht gelesen, sondern muss gemessen werden, wobei die Superposition zerstört wird und anhand der Amplituden (die einen Anteil darstellen) folgendermaßen berechnet werden kann, mit welcher Wahrscheinlichkeit sich das Qubit in welchem Zustand befindet: $P(|0\rangle) = |\alpha|^2, P(|1\rangle) = |\beta|^2$
 
+Ein Qubit kann auch als Vektor in der Form $(\alpha \choose \beta)$ geschrieben werden.
+
 \subsubsection{Messung}
+\label{sec:bit_messung}
 
 Die Messung erfolgt je nach Ausführung des Quantenbits, da es auf mehrere Arten realisiert werden kann. Wenn Licht eine Rolle spielt, kann die Lichtstärke gemessen werden, wobei diese Art von Qubits nur kürzer als 1 Minuten gespeichert werden kann. Kernspinquantenbits können durch Messung der Magnetfelder, Ionenfallen mithilfe eines Lasers ausgelesen werden. Mehr dazu befindet sich im Kapitel Anforderungen.
 
 \subsubsection{Zustände \& Zustandsänderungen}
+\label{sec:zustaende}
+
+
+
 
 
 \subsection{Register}
-\label{sec:Register}
+\label{sec:register}
+
+
+
+
 
 \subsubsection{Definition}
+\label{sec:register_definition}
 (formeln auf seite 28)
 
 Ein Quantenregister besteht aus einer Reihe von 2 bis n Qubits und wird angeschrieben als $R = |x_1\ranlge|x_0\rangle$
 Zur Erklärung ist allerdings eine Beschränkung auf das Minumum von 2 Bits sinnvoll.
 
 \subsubsection{Berechnung}
+\label{sec:register_berechnung}
 
 Die Berechnung des Zustands eines Quantenregisters mit 2 Bit sieht folgendermaßen aus:
 \begin{itemize}
@@ -66,23 +81,49 @@ befinden, wobei die Einschränkung der einzelnen Qubits nicht vergessen werden d
 $\displaystyle\sum_{i=0}^{2^n-1}  |\alpha|^2 = 1$
 
 \subsubsection{Zustände}
+\label{sec:zustande}
 
-Der Zustand des Registers kann dann durch Ausmultiplizieren errechnet werden. -formel 4-
+
+
+
 
 \subsubsection{begriffe ''lokal'' und ''unitär''}
+\label{sec:lokal_unitar}
 
-\subsection{Gatter}
-\label{sec:Gatter}
+
+
+
+
+\section{Hardware}
+\label{sec:hardware}
+
+\subsection{Gatter \& Transformationen}
+\label{sec:gatter}
+
+\subsubsection{Hadamard-Transformation}
+\label{sec:hadamard}
+
+
+
+
 
 \subsubsection{CNOT}
+\label{sec:cnot}
 
 CNOT bedeutet ausgesprochen ''Controlled Not'', was als ''Kontrollierbare Negierungsschaltung'' übersetzt werden kann.
 Ein CNOT hat 2 Eingänge und 2 Ausgänge, wobei der zweite Ausgang den invertierten Wert von 1 ausgibt wird, wenn der erste Eingang auf 1 gesetzt ist.
 
+\begin{figure}[!htb]
+	\centering\includegraphics[width=0.8\textwidth]{images/cnot.jpg}
+	\caption{CNOT-Gatter}
+	\label{cnot}
+\end{figure}
+
 \subsection{Architektur}
-\label{sec:Architektur}
+\label{sec:architektur}
 
 \subsubsection{Anforderungen}
+\label{sec:anforderungen}
 
 Definition von David Deutsch 1985:
 Ein Quantencomputer besteht aus einer Reihe von Quantenbits,
@@ -93,12 +134,14 @@ Ein Quantencomputer besteht aus einer Reihe von Quantenbits,
 	\item die gemessen werden können.
 \end{enumerate}
 
-\subsubsection{(De)kohärenz}
+\subsubsection{(De)Kohärenz}
+\label{sec:koharenz}
 
 Kohärenz bedeutet Zusammenhängend. Dekohärenz ist ein Phänomen der Quantenphysik, das Kohärenzeigenschaften von Systemen kurzzeitig außer Kraft setzt. Dekohärenzeffekte treten auf, wenn ein geschlossenes System geöffnet wird und mit der Umwelt in Wechselwirkung treten kann, wobei die Zustände beider Systeme irreversibel verändert werden.
 Im Beispiel mit der Katze, wäre es eine Tote oder lebende Katze, und der Betrachter, der nun weiß, ob die Katze tot oder lebendig ist.
 
 \subsubsection{Photonen}
+\label{sec:photonen}
 
 Die Physiker Ludwig Mach und Ludwig Zehnder entwickelten unabhängig voneinander beide den selben Versuchsaufbau, der heutzutage Mach-Zender-Inferometer genannt wird. Er besteht aus 4 Spiegeln, wovon 2 halbdurchlässig sind, 2 Messgeräten und einem Streifen Papier.
 
@@ -107,33 +150,46 @@ Wenn ein Lichtstrahl in den Aufbau geschickt wird, so wird er über den ersten S
 Wenn anstelle eines Lichtstrahles nur einzelne Photonen verwendet werden, zeigt sich der selbe Effekt, obwohl eigentlich keines der Photonen wissen kann, ob der Papierstreifen im Weg ist oder nicht. Und hier kommt wieder die Quantenphysik als Erklärung zum einsatz, da ein Teilchen, wie wir schon wissen, solange es nicht beobachtet wird, in mehreren Zuständen gleichzeitig sein kann. Es kann sich also auf beiden Bahnen gleichzeitig bewegen, bis es gemessen wird, wodurch die Superposition zerstört wird und es nur bei einem Messgerät ankommen kann.
 
 \subsubsection{Kernspinresonanz}
+\label{sec:kernspinresonanz}
 
 Kernspinresonanz ist der Name für einen phyiskalischen Effekt der in Form von Wechselwirkung zwischen Atomkernen und Magnetfeldern auftritt. Der Spin eines Moleküls kann durch Magnetfelder ausgerichtet werden, was ausgenutzt wird, um Quantenbits abzubilden und zu speichern. Durch unterschiedliche chemische Eigenschaften der Umgebung kann jedes Bit einzeln angesprochen werden. Mithilfe eines Hauptmagnetfeldes kann man die Zustande definieren, zum Beispiel als: $gleiche Ausrichtung = |0\rangle, im rechten Winkel = |1\rangle$;
 
 \subsubsection{Ionenfallen}
+\label{sec:ionenfallen}
 
 Ionenfallen sind dazu da, um elektrisch geladene Moleküle oder Atome durch Magnetfelder an ein und der selben Position zu halten, wodurch mit einem gefangenen Ion bis zu 2 Quantenbits abgebildet werden können. Die abstände zwischen mehreren Ionen liegen im Mikrometerbereich, können durch einen Laser einzeln adressiert werden, aber müssen Temperaturmäßig nahe dem Absoluten gehalten werden um sich nicht gegenseitig abzustoßen.
 
-\section{Interkommunikation}
-\label{sec:Interkommunikation}
+\subsection{Umsetzung}
+\label{sec:umsetzung}
 
+\subsubsection{D-Wave Systems}
+\label{sec:dwave}
+
+
+
+
+
+\section{Interkommunikation}
+\label{sec:interkommunikation}
 
 \subsection{Quantennetzwerke/Kanäle}
 \label{sec:Quantennetzwerke/Kanale}
 
-\subsubsection{Generelles Schema eines Telekommunikationssystems}
-
 \subsubsection{Klassische- vs. Quanten-Kommunikationskanäle}
+\label{sec:klassich_vs_quanten}
+
+
+
+
 
 \subsubsection{Photonzählung}
+\label{sec:photonzaelung}
 
 Bei der Photonzälung werden zwischen 2 Standorten mit Sichtkontakt einzelne Photonen vom Sender ausgeschickt und vom Empfänger gezählt. Praktisch getestet wurde es von Harald Weinfurter im Jahr 2007 mit einer Strecke von 144 km, wofür große Teleskope verwendet werden mussten.
 
 \subsection{Quantenteleportation}
-\label{sec:Quantenteleportation}
+\label{sec:quantenteleportation}
 
 Bei der Quantenteleportation sind 2 Atome an verschiedenen Orten durch Verschränkung verbunden, wodurch bei Anderungen an einer Seite die andere Seite gleichzeitig die selbe Änderung erfährt. Allerdings muss im Vorfeld dieses Qubit an den anderen Ort gebracht werden und zur übertragung noch eine klassische Information ausgetauscht werden, um das Qubit auf die entsprechenden Zustände projizieren zu können. Dadurch ist eine Datenübertragung auf Lichtgeschwindigkeit beschränkt und kann nicht absolut Zeitgleich erfolgen.
 
-
-
-
+%todo: genauer formulieren
