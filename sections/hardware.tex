@@ -20,30 +20,43 @@ Wenn nun die Kiste geöffnet wird und der Betrachter einen Blick ins innere der 
 \label{sec:bit_definition}
 
 Per Definition werden die Zustände eines Quantenbits in der Form $\alpha * |0\rangle + \beta * |1\rangle$ angeschrieben.
-$\alpha$ und $\beta$ werden ''Amplituden'' genannt, sind komplexe Zahlen und durch die Formel $|\alpha|^2 + |\beta|^2 = 1$ voneinander abhängig.
+$\alpha$ und $\beta$ werden ''Amplituden'' genannt, sind komplexe Zahlen, stellen einen Anteil am Gesamtzustand dar und sind durch die Formel $|\alpha|^2 + |\beta|^2 = 1$ voneinander abhängig.
 
-Anders als ein klassisches Bit, kann ein Qubit nicht gelesen, sondern muss gemessen werden, wobei die Superposition zerstört wird und anhand der Amplituden (die einen Anteil darstellen) folgendermaßen berechnet werden kann, mit welcher Wahrscheinlichkeit sich das Qubit in welchem Zustand befindet: $P(|0\rangle) = |\alpha|^2, P(|1\rangle) = |\beta|^2$
+Dank der folgenden Umrechnung kann ein Qubit auch als Vektor geschrieben werden.
 
-Ein Qubit kann auch als Vektor in der Form $(\alpha \choose \beta)$ geschrieben werden.
+$\alpha|0\rangle+\beta|1\rangle = \alpha(1\choose0)+\beta(0\choose1) = (\alpha \choose \beta)$
+
+\begin{figure}[!htb]
+	\centering\includegraphics[width=0.8\textwidth]{images/vektor.jpg}
+	\caption{Die Superposition als Vektor}
+	\label{vektor}
+\end{figure}
 
 \subsubsection{Messung}
 \label{sec:bit_messung}
 
-Die Messung erfolgt je nach Ausführung des Quantenbits, da es auf mehrere Arten realisiert werden kann. Wenn Licht eine Rolle spielt, kann die Lichtstärke gemessen werden, wobei diese Art von Qubits nur kürzer als 1 Minuten gespeichert werden kann. Kernspinquantenbits können durch Messung der Magnetfelder, Ionenfallen mithilfe eines Lasers ausgelesen werden. Mehr dazu befindet sich im Kapitel Anforderungen.
+Anders als ein klassisches Bit, kann ein Qubit nicht gelesen, sondern muss gemessen werden, wobei die Superposition zerstört wird.
 
-\subsubsection{Zustände \& Zustandsänderungen}
+Die Messung erfolgt je nach Ausführung des Quantenbits, da es auf mehrere Arten realisiert werden kann. Wenn Licht eine Rolle spielt, kann die Lichtstärke gemessen werden, wobei diese Art von Qubits nur kürzer als 1 Minuten gespeichert werden kann. Kernspinquantenbits können durch Messung der Magnetfelder, Ionenfallen mithilfe eines Lasers ausgelesen werden. Mehr dazu befindet sich im Kapitel Architektur.
+
+\subsubsection{Zustände}
 \label{sec:zustaende}
 
+Bei der Messung eines Quantenbits im Zustand $\alpha|0\rangle+\beta|1\rangle$ wird die Superposition zerstört, wodurch das Quantenbit mit der Wahrscheinlichkeit $|\alpha|^2$ den Zustand $|0\rangle$ und mit der Wahrscheinlichkeit $|\beta|^2$ den Zustand $|1\rangle$ annimmt.
 
+\subsubsection{Verschränkung}
+\label{sec:verschraenkung}
 
+2 Verschränkte Qubits haben die besondere Eigenschaften, dass sie sich unabhäng von der Distanz im genau gleichen Zustand befinden. Bei der Messung des einen Qubits wird die Superpositon beider Qubits zerstört und sie nehmen den selben wert an, der dann auch beim anderen Qubit gemessen werden kann.
 
+\subsubsection{(De)Kohärenz}
+\label{sec:koharenz}
+
+Kohärenz bedeutet Zusammenhängend. Dekohärenz ist ein Phänomen der Quantenphysik, das Kohärenzeigenschaften von Systemen kurzzeitig außer Kraft setzt. Dekohärenzeffekte treten auf, wenn ein geschlossenes System geöffnet wird und mit der Umwelt in Wechselwirkung treten kann, wobei die Zustände beider Systeme irreversibel verändert werden.
+Im Beispiel mit der Katze, wäre es eine Tote oder lebende Katze, und der Betrachter, der nun weiß, ob die Katze tot oder lebendig ist.
 
 \subsection{Register}
 \label{sec:register}
-
-
-
-
 
 \subsubsection{Definition}
 \label{sec:register_definition}
@@ -72,27 +85,23 @@ sowie die Ziffern vom binären ins dezimale Zahlensystem umgerechnet, wodurch fo
 
 $R = \alpha_0|0\rangle+\alpha_1|1\rangle+\alpha_2|2\rangle+\alpha_3|3\rangle$
 
+\subsubsection{Zustände}
+\label{sec:zustande}
+
 per Definition kann sich ein Quantenregister in Zuständen der Form
 
 $R = \displaystyle\sum_{i=0}^{2^n-1} \alpha_1|i\rangle$
 
-befinden, wobei die Einschränkung der einzelnen Qubits nicht vergessen werden darf, die für ein Register auf folgende Art geschrieben werden kann:
+befinden, wobei die Einschränkung der einzelnen Qubits nicht vergessen werden darf, die für ein Register auf folgende Art erweitert werden kann:
 
 $\displaystyle\sum_{i=0}^{2^n-1}  |\alpha|^2 = 1$
 
-\subsubsection{Zustände}
-\label{sec:zustande}
-
-
-
-
-
-\subsubsection{begriffe ''lokal'' und ''unitär''}
+\subsubsection{Begriffe ''lokal'' und ''unitär''}
 \label{sec:lokal_unitar}
 
+Unitär bedeutet soviel wie Umkehrbar. Eine uniätre Operation kann also rückgängig gemacht werden. Die Voraussetzung dafür ist, dass es nur eine möglichkeit gibt, auf den Endzustand der Operation zu kommen. Wenn ein Endzustand von 2 verschiedenen Anfangszuständen erreicht werden kann, so ist nicht eindeutig, welcher Zustand der Anfangszustand ist und die Operation ist nicht unitär.
 
-
-
+Rechenoperationen können auf einzelne Bits oder ganze Register ausgeführt werden. Da allerdings eine Rechenoperation auf ein ganzes Register auszuführen sehr schnell ziemlich kompliziert werden kann, führt man die Operation auf jedes Bit einzeln aus, wobei man das gleiche Gesamtergebnis erhält. Lokal ist eine Registertransformation, wenn daran für jede Operation konstant viele Qubits beteiligt sind.
 
 \section{Hardware}
 \label{sec:hardware}
@@ -103,9 +112,9 @@ $\displaystyle\sum_{i=0}^{2^n-1}  |\alpha|^2 = 1$
 \subsubsection{Hadamard-Transformation}
 \label{sec:hadamard}
 
+Definiert ist die Hadamard-Transformation als Matrix $H = 1/\sqrt{2}\begin{pmatrix}1&1\\1&-1\end{pmatrix} $
 
-
-
+Um die Hadamard-Matrix verwenden zu Können, muss das Qubit mithilfe der unitären Matrix $A = \begin{pmatrix}a&b\\c&d\end{pmatrix}$ folgendermaßen umgerechnet werden: $(\alpha'\choose\beta') = A(\alpha\choose\beta) = ({a\alpha + b\beta}\choose{c\alpha + d\beta})$
 
 \subsubsection{CNOT}
 \label{sec:cnot}
@@ -134,12 +143,6 @@ Ein Quantencomputer besteht aus einer Reihe von Quantenbits,
 	\item die gemessen werden können.
 \end{enumerate}
 
-\subsubsection{(De)Kohärenz}
-\label{sec:koharenz}
-
-Kohärenz bedeutet Zusammenhängend. Dekohärenz ist ein Phänomen der Quantenphysik, das Kohärenzeigenschaften von Systemen kurzzeitig außer Kraft setzt. Dekohärenzeffekte treten auf, wenn ein geschlossenes System geöffnet wird und mit der Umwelt in Wechselwirkung treten kann, wobei die Zustände beider Systeme irreversibel verändert werden.
-Im Beispiel mit der Katze, wäre es eine Tote oder lebende Katze, und der Betrachter, der nun weiß, ob die Katze tot oder lebendig ist.
-
 \subsubsection{Photonen}
 \label{sec:photonen}
 
@@ -165,6 +168,8 @@ Ionenfallen sind dazu da, um elektrisch geladene Moleküle oder Atome durch Magn
 \subsubsection{D-Wave Systems}
 \label{sec:dwave}
 
+D-Wave Systems ist ein 1999 gegründetes Amerikanischen Unternehmen, dass seit Jahren damit wirbt, den ersten und einzig wahren Quantencomputer herzustellen. D-Wave hat bereits Geräte an Lockhead-Martin, Google, NASA und die Kalifornische Universität verkauft.
+
 
 
 
@@ -175,21 +180,28 @@ Ionenfallen sind dazu da, um elektrisch geladene Moleküle oder Atome durch Magn
 \subsection{Quantennetzwerke/Kanäle}
 \label{sec:Quantennetzwerke/Kanale}
 
-\subsubsection{Klassische- vs. Quanten-Kommunikationskanäle}
+\subsubsection{Klassische vs. Quanten-Kommunikationskanäle}
 \label{sec:klassich_vs_quanten}
 
+Zu den klassischen Kommunikationskanälen gehören eindeutig Kabel mit 1-n elektrisch Leitenden drähten, über die durch an- und ausschalten einzelne Bits übertragen werden können. Dieser Kommunikationsweg muss nach einer gewissen maximalen Strecke verstärkt werden, was zu verzögerungen führt.
 
+Heutzutage zu klassichen Kommunikationskanälen, aber auch für die Übertragung von Qubits verwendbar, sind Glasfaserkabel. Im Klassischen Sinne wird Licht an und aus-geschalten, für Quantenkommunikation werden einzelne Qubits in form von Photonen übertragen.
 
-
+Wenn man von Quantenkommunikationskanälen spricht, wird aber meist Verschränkung zwischen 2 Qubits gemeint. Dabei wird unterschieden zwischen rauschfreien und verrauschten Kanälen unterscheiden, wobei durch mehrfache Übertragungen mit klassischer Zusatzinformation aus einem verrauschten Kanal Stück für Stück ein rauschfreier Kanal machen lässt.
 
 \subsubsection{Photonzählung}
 \label{sec:photonzaelung}
 
-Bei der Photonzälung werden zwischen 2 Standorten mit Sichtkontakt einzelne Photonen vom Sender ausgeschickt und vom Empfänger gezählt. Praktisch getestet wurde es von Harald Weinfurter im Jahr 2007 mit einer Strecke von 144 km, wofür große Teleskope verwendet werden mussten.
+Bei der Photonzälung werden zwischen 2 Standorten mit Sichtkontakt einzelne Photonen vom Sender ausgeschickt und vom Empfänger gezählt. Falls kein direkter Sichtkontakt besteht, können die Übertragungen auch über Glasfaserkabel erfolgen.
+
+Praktisch getestet wurde es von Harald Weinfurter im Jahr 2007 mit einer Strecke von 144 km, wofür große Teleskope verwendet werden mussten.
 
 \subsection{Quantenteleportation}
 \label{sec:quantenteleportation}
 
-Bei der Quantenteleportation sind 2 Atome an verschiedenen Orten durch Verschränkung verbunden, wodurch bei Anderungen an einer Seite die andere Seite gleichzeitig die selbe Änderung erfährt. Allerdings muss im Vorfeld dieses Qubit an den anderen Ort gebracht werden und zur übertragung noch eine klassische Information ausgetauscht werden, um das Qubit auf die entsprechenden Zustände projizieren zu können. Dadurch ist eine Datenübertragung auf Lichtgeschwindigkeit beschränkt und kann nicht absolut Zeitgleich erfolgen.
+Bei der Quantenteleportation sind 2 Qubits in form von Atomen an verschiedenen Orten durch Verschränkung verbunden. Bei einer Messung des Bits auf der ''Sender''-Seite wird die Superposition zerstört und beide Qubits nehmen zeitgleich den gleichen Zustand an. Da der Empfänger aber nicht wissen kann, wann der Sender das Bit betrachtet hat, muss über einen herkömmlichen Kanal ein Signal gesendet werden, dass den Empfänger imformiert, dass er sich das Qubit gefahrlos ansehen kann, ohne den Zustand zu verändern. Der zweite Grund für die Notwendigkeit der Übertragung eines Herkömmlichen Bits ist der, dass das Qubit beim Empfänger entweder durch Vertauschung mithilfe der Matrix $$ oder Transformation mithilfe der Matrix $$ gemappt werden muss.
 
-%todo: genauer formulieren
+Um allerdings 2 verschränkte Qubits an verschiedene Orte zu bringen, muss entwedet ein Quantenkanal bestehen oder schon im Vorfeld eines der verschränkten Qubits vom Sender zum Empfänger oder vom Empfänger zum Sender gebracht werden.
+
+Da die Übertragung des herkömmlichen Bits nicht zeitgleich möglich ist, stellt sich die Frage, in welcher Form eine Quantenteleportation dann schneller ist. Die Antwort hängt mit Quantenregistern zusammen, da auch für ein komplettes Register nur ein einziges herkömmliches Bit übertragen werden muss.
+
