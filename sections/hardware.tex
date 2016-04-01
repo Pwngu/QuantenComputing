@@ -13,7 +13,7 @@ Schrödingers Katze ist die berühmteste Veranschaulichung eines grundlegenden P
 
 In einer Kiste befinden sich eine Katze und eine Ampulle mit einer giftigen Substanz. Mit einer exakten Wahrscheinlichkeit von 50\% ist die Ampulle offen und die Katze bereits tot, mit einer genau gleich großen Wahrscheinlichkeit ist aber die Ampulle immer noch verschlossen und die Katze am Leben. Da wir nur die Außenseite der Kiste sehen und sie Schall und Geruchsdicht ist, können wir nicht genau sagen, in welchem Zustand die Katze sich befindet. Es könnte also behauptet werden, dass sie gleichzeitig tot und lebendig ist.
 
-Den Umstand, dass 2 (oft gegensätzliche) Zustände wahr sind, wird in der Quantenmechanik als Superposition bezeichnet. Eine Voraussetzung für das erreichen einer Superposition ist die vollkommene Abschottung von der Außenwelt. 
+Den Umstand, dass 2 (oft gegensätzliche) Zustände zeitgleich wahr sind, wird in der Quantenmechanik als Superposition bezeichnet. Eine Voraussetzung für das erreichen einer Superposition ist die vollkommene Abschottung von der Außenwelt. 
 
 Wenn nun die Kiste geöffnet wird und der Betrachter einen Blick ins innere der Kiste wirft, so erkennt er ziemlich schnell, ob die Katze tot oder lebendig ist. Einer der beiden Zustände ist durch diese sogenannte Messung verloren gegangen.
 
@@ -38,7 +38,7 @@ $\alpha|0\rangle + \beta|1\rangle = \alpha\binom{1}{0} + \beta\binom{0}{1} = \bi
 \subsubsection{Messung}
 \label{sec:Messung}
 
-Anders als ein klassisches bit, kann ein Qubit nicht gelesen, sondern muss gemessen werden, wobei die Superposition zerstört wird.
+Anders als ein klassisches Bit, kann ein Qubit nicht gelesen, sondern muss gemessen werden, wobei die Superposition zerstört wird.
 
 Die Messung erfolgt je nach Ausführung des Quantenbits, da es auf mehrere Arten realisiert werden kann. Wenn Licht eine Rolle spielt, kann die Lichtstärke gemessen werden, wobei diese Art von Qubits nur kürzer als 1 Minuten gespeichert werden können. Kernspinquantenbits können durch Messung der Magnetfelder, Ionenfallen mithilfe eines Lasers ausgelesen werden (siehe \ref{sec:Architektur}).
 
@@ -52,21 +52,20 @@ Bei der Messung eines Quantenbits im Zustand $\alpha|0\rangle+\beta|1\rangle$ wi
 \subsubsection{Verschränkung}
 \label{sec:Verschraenkung}
 
-2 Verschränkte Qubits haben die besondere Eigenschaften, dass sie sich unabhäng von der Distanz im genau gleichen Zustand befinden. Bei der Messung des einen Qubits wird die Superpositon beider Qubits zerstört und sie nehmen den selben wert an, der dann auch beim anderen Qubit gemessen werden kann.
+2 verschränkte Qubits haben die besondere Eigenschaften, dass sie sich unabhäng von der Distanz im genau gleichen Zustand befinden. Bei der Messung des einen Qubits wird die Superpositon beider Qubits zerstört und sie nehmen den selben Wert an, der dann auch beim anderen Qubit gemessen werden kann.
 
 
 \subsubsection{(De)Kohärenz}
 \label{sec:Kohaerenz}
 
-Kohärenz bedeutet Zusammenhängend. Dekohärenz ist ein Phänomen der Quantenphysik, das Kohärenzeigenschaften von Systemen kurzzeitig außer Kraft setzt. Dekohärenzeffekte treten auf, wenn ein geschlossenes System geöffnet wird und mit der Umwelt in Wechselwirkung treten kann, wobei die Zustände beider Systeme irreversibel verändert werden.
-Im Beispiel mit der Katze, wäre es eine Tote oder lebende Katze, und der Betrachter, der nun weiß, ob die Katze tot oder lebendig ist.
+Kohärenz bedeutet zusammenhängend. Dekohärenz ist ein Phänomen der Quantenphysik, das Kohärenzeigenschaften von Systemen kurzzeitig außer Kraft setzt. Dekohärenzeffekte treten auf, wenn ein geschlossenes System geöffnet wird und mit der Umwelt in Wechselwirkung treten kann, wobei die Zustände beider Systeme irreversibel verändert werden.
+Im Beispiel mit der Katze, wäre es eine tote oder lebende Katze, und der Betrachter, der nun weiß, ob die Katze tot oder lebendig ist.
 
 \subsection{Register}
 \label{sec:Register}
 
 \subsubsection{Definition}
 \label{sec:Register_Definition}
-(formeln auf seite 28)
 
 Ein Quantenregister besteht aus einer Reihe von 2 bis n Qubits und wird angeschrieben als $R = |x_1\rangle|x_0\rangle$
 Zur Erklärung ist allerdings eine Beschränkung auf das Minumum von 2 Bits sinnvoll.
@@ -83,7 +82,7 @@ Die Berechnung des Zustands eines Quantenregisters mit 2 Bit sieht folgendermaß
 	\item[=] $\beta_0\gamma_0|0\rangle|0\rangle+\beta_0\gamma_1|0\rangle|1\rangle+\beta_1\gamma_0|1\rangle|0\rangle+\beta_1\gamma_1|1\rangle|1\rangle$
 \end{itemize}
 
-Zur Übersichtlichkeit wird angenommen, das
+Zur Übersichtlichkeit wird angenommen, dass
 \begin{itemize}
 	\item $\alpha_{i,j} = \beta_i\gamma_j$ und
 	\item $|x_1\rangle|x_0\rangle = |x_1 x_0\rangle$
@@ -108,7 +107,7 @@ $\displaystyle\sum_{i=0}^{2^n-1}  |\alpha|^2 = 1$
 \subsubsection{Begriffe ''lokal'' und ''unitär''}
 \label{sec:Begriffe lokal unitaer}
 
-Unitär bedeutet soviel wie Umkehrbar. Eine uniätre Operation kann also rückgängig gemacht werden. Die Voraussetzung dafür ist, dass es nur eine möglichkeit gibt, auf den Endzustand der Operation zu kommen. Wenn ein Endzustand von 2 verschiedenen Anfangszuständen erreicht werden kann, so ist nicht eindeutig, welcher Zustand der Anfangszustand ist und die Operation ist nicht unitär.
+Unitär bedeutet soviel wie Umkehrbar. Eine uniätre Operation kann also rückgängig gemacht werden. Die Voraussetzung dafür ist, dass es nur eine Möglichkeit gibt, auf den Endzustand der Operation zu kommen. Wenn ein Endzustand von 2 verschiedenen Anfangszuständen erreicht werden kann, so ist nicht eindeutig, welcher Zustand der Ausgangszustand war und die Operation ist nicht unitär.
 
 Rechenoperationen können auf einzelne Bits oder ganze Register ausgeführt werden. Da allerdings eine Rechenoperation auf ein ganzes Register auszuführen sehr schnell ziemlich kompliziert werden kann, wird die Operation auf jedes Bit einzeln ausgeführt, wobei das gleiche Gesamtergebnis entsteht. Lokal ist eine Registertransformation, wenn daran für jede Operation konstant viele Qubits beteiligt sind.
 
@@ -141,7 +140,7 @@ folgendermaßen umgerechnet werden: $\binom{\alpha'}{\beta'} = A \binom{\alpha}{
 \subsubsection{CNOT}
 \label{sec:CNOT}
 
-Ein CNOT (Controlled Not) hat 2 Eingänge und 2 Ausgänge, wobei der zweite Ausgang den invertierten Wert von 1 ausgibt wird, wenn der erste Eingang auf 1 gesetzt ist.
+Ein CNOT (Controlled Not) hat 2 Eingänge und 2 Ausgänge, wobei der zweite Ausgang den invertierten Wert von 1 ausgibt wird, wenn der erste Eingang auf 1 gesetzt ist und ansonsten das Signal des Eingangs einfach durchleitet.
 
 \begin{figure}[!htb]
 	\centering\includegraphics[width=0.4\textwidth]{images/cnot.jpg}
@@ -168,9 +167,9 @@ Ein Quantencomputer besteht aus einer Reihe von Quantenbits,
 \subsubsection{Photonen}
 \label{sec:Photonen}
 
-Die Physiker Ludwig Mach und Ludwig Zehnder entwickelten unabhängig voneinander beide den selben Versuchsaufbau, der heutzutage Mach-Zender-Inferometer genannt wird. Er besteht aus 4 Spiegeln, wovon 2 halbdurchlässig sind, 2 Messgeräten und einem Streifen Papier.
+Die Physiker Ludwig Mach und Ludwig Zehnder entwickelten unabhängig voneinander beide den selben Versuchsaufbau, der heutzutage Mach-Zender-Inferometer genannt wird. Er besteht aus 4 Spiegeln (wovon 2 halbdurchlässig sind), 2 Messgeräten und einem Streifen Papier.
 
-Wenn ein Lichtstrahl in den Aufbau geschickt wird, so wird er über den ersten Spiegel, der halbdurchlässig ist, geteilt in eine gerade und eine um 90° abgelenkte Bahn gelenkt. Nach einem gewissen Abstand befindet sich auf jeder Bahn einer der "normalen" Spiegel, wodurch das Licht jeweils um 90° gelenkt wird und sich die beiden dann an einer Stelle kreuzen, an der der zweite halbdurchlässige Spiegel montiert wird. In eine Bahn wird ein Blatt Papier gehalten. Durch den halbdurchlässigen Spiegel kommt bei beiden Messgeräten gleich viel Licht an. Wird das Blatt Papier entfernt, so kommt es auf einer Bahn zu konstruktiven überlagerungen zwischen dem letzten Spiegel und dem Messgerät, wodurch bei diesem kein Licht ankommt.
+Wenn ein Lichtstrahl in den Aufbau geschickt wird, so wird er über den ersten Spiegel, der halbdurchlässig ist, geteilt in eine gerade und eine um 90° abgelenkte Bahn gelenkt. Nach einem gewissen Abstand befindet sich auf jeder Bahn einer der "normalen" Spiegel, wodurch das Licht jeweils um 90° gelenkt wird und sich die beiden dann an einer Stelle kreuzen, an der der zweite halbdurchlässige Spiegel montiert wird. In eine Bahn wird ein Blatt Papier gehalten. Durch den halbdurchlässigen Spiegel kommt bei beiden Messgeräten gleich viel Licht an. Wird das Blatt Papier entfernt, so kommt es auf einer Bahn zu destruktiven Überlagerungen der Lichtstrahlen zwischen dem letzten Spiegel und dem Messgerät, wodurch bei diesem kein Licht ankommt.
 
 Wenn anstelle eines Lichtstrahles nur einzelne Photonen verwendet werden, zeigt sich der selbe Effekt, obwohl eigentlich keines der Photonen wissen kann, ob der Papierstreifen im Weg ist oder nicht. Und hier kommt wieder die Quantenphysik als Erklärung zum einsatz, da ein Teilchen, wie wir schon wissen, solange es nicht beobachtet wird, in mehreren Zuständen gleichzeitig sein kann. Es kann sich also auf beiden Bahnen gleichzeitig bewegen, bis es gemessen wird, wodurch die Superposition zerstört wird und es nur bei einem Messgerät ankommen kann.
 
@@ -184,7 +183,7 @@ Kernspinresonanz ist der Name für einen phyiskalischen Effekt der in Form von W
 \subsubsection{Ionenfallen}
 \label{sec:Ionenfallen}
 
-Ionenfallen sind dazu da, um elektrisch geladene Moleküle oder Atome durch Magnetfelder an ein und der selben Position zu halten, wodurch mit einem gefangenen Ion bis zu 2 Quantenbits abgebildet werden können. Die abstände zwischen mehreren Ionen liegen im Mikrometerbereich, können durch einen Laser einzeln adressiert werden, aber müssen Temperaturmäßig nahe dem Absoluten-Nullpunkt gehalten werden um sich nicht gegenseitig abzustoßen.
+Ionenfallen sind dazu da, um elektrisch geladene Moleküle oder Atome durch Magnetfelder an ein und der selben Position zu halten, wodurch mit einem gefangenen Ion bis zu 2 Quantenbits abgebildet werden können. Die Abstände zwischen mehreren Ionen liegen im Mikrometerbereich, können durch einen Laser einzeln adressiert werden, aber müssen temperaturmäßig nahe dem absoluten Nullpunkt gehalten werden um sich nicht gegenseitig abzustoßen.
 
 
 \subsection{Umsetzung}
@@ -193,39 +192,39 @@ Ionenfallen sind dazu da, um elektrisch geladene Moleküle oder Atome durch Magn
 \subsubsection{D-Wave Systems}
 \label{sec:D-Wave Systems}
 
-D-Wave Systems ist ein 1999 gegründetes Amerikanischen Unternehmen, dass seit Jahren damit wirbt, den ersten und einzig wahren Quantencomputer herzustellen. D-Wave Systems hat bereits Geräte an Lockhead-Martin, Google, NASA und die Kalifornische Universität verkauft.
+D-Wave Systems ist ein 1999 gegründetes amerikanischen Unternehmen, dass seit Jahren damit wirbt, den ersten und einzig wahren Quantencomputer herzustellen. D-Wave Systems hat bereits Geräte an Lockheed-Martin, Google, NASA und die Kalifornische Universität verkauft.
 
 \begin{figure}[!htb]
-	\centering\includegraphics[width=0.8\textwidth]{images/dwave.jpg}
-	\caption{D-Wave Systems' Quanten Computer}
+	\centering\includegraphics[width=0.8\textwidth]{images/d_wave.jpg}
+	\caption{D-Wave Systems' Quantenprozessor}
 	\label{dwave}
 \end{figure}
 
-Kritiker sind der Meinung, dass ein echter Quantencomputer erst in vielen Jahren möglich sein wird, falls überhaupt. Ein Google Test 2014 hat ergeben, dass keine Geschwindigkeitsveresserung festgestellt werden konnte. Anfang Dezember 2015 scheint durch eine weitere Google-Testreihe allerdings das Gegenteil bewiesen worden zu sein. In einem Test mit großen Bitmengen wurden laut Google Entwicklungsleiter Hartmut Neven eine Reihe herkömmlicher Großrechner zeitmäßig um Längen übertrumpft.
+Kritiker sind der Meinung, dass ein echter Quantencomputer erst in vielen Jahren möglich sein wird, falls überhaupt. Ein Google-Test 2014 hat ergeben, dass keine Geschwindigkeitsverbesserung festgestellt werden konnte. Anfang Dezember 2015 scheint durch eine weitere Google-Testreihe allerdings das Gegenteil bewiesen worden zu sein. In einem Test mit großen Bitmengen wurden laut Google Entwicklungsleiter Hartmut Neven eine Reihe herkömmlicher Großrechner zeitmäßig um Längen übertrumpft. \cite{dwave1} \cite{dwave2}
 
-%https://www.wired.de/collection/latest/der-quantencomputer-d-wave-scheint-zu-funktionieren
-%http://venturebeat.com/2015/12/08/google-says-its-quantum-computer-is-more-than-100-million-times-faster-than-a-regular-computer-chip/
+\paragraph{Arbeitsweise} ~\\
+Eine Forschungsarbeit an der ETH Zürich hat ergeben, dass der Quantencomputer von D-Wave Systems eigentlich eine Ein-Zweck-Maschine ist, für die ein Problem erst in ein passendes Format, bestehend aus einer großen Anzahl Variablen, gebracht werden muss, damit sie dann in relativ kurzer Zeit ein Optimum ermitteln kann. Sie hat aber weder etwas mit richtigen Quantenrechnern noch mit herkömmlichen Allzweckcomputern zu tun. \cite{dwave3} \cite{dwave4}
 
-Eine Forschungsarbeit an der ETH Zürich hat ergeben, dass der Quantencomputer eine Ein-Zweck-Maschine ist, für die ein Problem erst in ein passendes Format, bestehend aus einer großen Anzahl Variablen, gebracht werden muss, damit sie dann in relativ kurzer Zeit ein Optimum ermitteln kann. Sie hat aber weder etwas mit richtigen Quantenrechnern noch mit herkömmlichen Allzweckcomputern zu tun.
+Die Arbeitsweise wird auf der offiziellen Webseite von D-Wave Systems erklärt, wobei die Optimierung durch ''quantum annealing'' (direkt übersetzt: Quanten glühen) als die einzige Art des Quantencomputing dargestellt wird. \cite{dwave5}
+Desweiteren findet sich auf der offiziellen Webseite eine Auflistung von Anwendungsgebieten, wobei die meisten als Mustererkennung oder Vorraussagen kategorisiert werden können. \cite{dwave6}
 
-%http://www.spektrum.de/news/daempfer-fuer-den-d-wave-quantencomputer/1296152
-%http://motherboard.vice.com/read/google-claims-its-d-wave-quantum-computer-is-the-real-deal
+Der Prozessor wird um rechnen zu können auf 15°Kelvin gehalten, also knapp über dem absoluten Nullpunkt. Um diese Temperatur zu erreichen, ist der Prozessor in einem stark isolierten und magnetisch abgeschirmten Kasten verbaut.
 
-Die Arbeitsweise wird auf der offiziellen Webseite von D-Wave Systems erklärt, wobei die Optimierung durch ''quantum annealing'' (direkt übersetzt: Quanten glühen) als die einzige art des Quantencomputing dargestellt wird.
+\begin{figure}[!htb]
+	\centering\includegraphics[width=0.8\textwidth]{images/d_wave_outjpg}
+	\caption{D-Wave Systems' Quanten Computer}
+	\label{dwave2}
+\end{figure}
 
-%http://www.dwavesys.com/quantum-computing
+\paragraph{Kunden} ~\\
 
-Desweiteren findet sich auf der offiziellen Webseite eine auflistung von Anwendungsgebieten, wobei die meisten als Mustererkennung oder Vorraussagen kategorisiert werden können.
+Lockheed-Martin ist vor allem in der Luft- und Raumfahrt tätig. Funktionierende Quantencomputer wären zur Angriffserkennung sowie zur Kommunikation quer durchs Weltall praktisch.
 
-%http://www.dwavesys.com/quantum-computing/industries
+Google ist eine der größten Suchmaschinen der Welt. Bei Suchmaschinen ist das Finden einer optimal zur Eingabe passenden Lösung essentiell. Daher kann Google den D-Wave Quantencomputer auch sehr gut verwenden.
 
+NASA (ausgesprochen ''National Aeronautics and Space Administration'') ist ein weltweit bekanntes Weltraumunternehmen. Hier steht natürlich die Datenübertragung in das und aus dem Weltall im Vordergrund, aber auch einfache künstliche Intelligenzen für Alleinflüge unbemannter Raumsonden über Jahrzehnte hinweg.
 
-
-
-
-%TODO bilder, gegenueberstellung,
-
-
+Die Kalifornische Universität wird sich vorraussichtlich eher auf Wettervorraussagungen und die Erforschung der Quantenphysik selbst spezielisieren.
 
 \newpage
 
@@ -238,15 +237,15 @@ Desweiteren findet sich auf der offiziellen Webseite eine auflistung von Anwendu
 \subsubsection{Klassische vs. Quanten-Kommunikationskanäle}
 \label{sec:Klassische vs. Quanten-Kommunikationskanaele}
 
-Zu den klassischen Kommunikationskanälen gehören eindeutig Kabel mit 1-n elektrisch Leitenden drähten, über die durch an- und ausschalten einzelne Bits übertragen werden können. Dieser Kommunikationsweg muss nach einer gewissen maximalen Strecke verstärkt werden, was zu verzögerungen führt.
+Zu den klassischen Kommunikationskanälen gehören eindeutig Kabel mit 1-n elektrisch leitenden Drähten, über die durch an- und ausschalten einzelne Bits übertragen werden können. Dieser Kommunikationsweg muss nach einer gewissen maximalen Strecke verstärkt werden, was zu verzögerungen führt.
 
 Heutzutage zu klassichen Kommunikationskanälen, aber auch für die Übertragung von Qubits verwendbar, sind Glasfaserkabel. Im Klassischen Sinne wird Licht an und aus-geschalten, für Quantenkommunikation werden einzelne Qubits in form von Photonen übertragen.
 
-Wenn von Quantenkommunikationskanälen gesprochen wird, wird aber meist Verschränkung zwischen 2 Qubits gemeint. Dabei wird unterschieden zwischen rauschfreien und verrauschten Kanälen unterscheiden, wobei durch mehrfache Übertragungen mit klassischer Zusatzinformation aus einem verrauschten Kanal Stück für Stück ein rauschfreier Kanal machen lässt.
+Wenn von Quantenkommunikationskanälen gesprochen wird, wird aber meist Verschränkung zwischen 2 Qubits gemeint. Dabei wird unterschieden zwischen rauschfreien und verrauschten Kanälen unterscheiden, wobei sich durch mehrfache Übertragungen mit klassischer Zusatzinformation aus einem verrauschten Kanal Stück für Stück ein rauschfreier Kanal machen lässt.
 
 
 \subsubsection{Photonzählung}
-\label{sec:Photonzaelung}
+\label{sec:Photonzaehlung}
 
 Bei der Photonzälung werden zwischen 2 Standorten mit Sichtkontakt einzelne Photonen vom Sender ausgeschickt und vom Empfänger gezählt. Falls kein direkter Sichtkontakt besteht, können die Übertragungen auch über Glasfaserkabel erfolgen.
 
@@ -256,9 +255,15 @@ Praktisch getestet wurde es von Harald Weinfurter im Jahr 2007 mit einer Strecke
 \subsection{Quantenteleportation}
 \label{sec:Quantenteleportation}
 
-Bei der Quantenteleportation sind 2 Qubits in form von Atomen an verschiedenen Orten durch Verschränkung verbunden. Bei einer Messung des Bits auf der ''Sender''-Seite wird die Superposition zerstört und beide Qubits nehmen zeitgleich den gleichen Zustand an. Da der Empfänger aber nicht wissen kann, wann der Sender das Bit betrachtet hat, muss über einen herkömmlichen Kanal ein Signal gesendet werden, dass den Empfänger imformiert, dass er sich das Qubit gefahrlos ansehen kann, ohne den Zustand zu verändern. Der zweite Grund für die Notwendigkeit der Übertragung eines Herkömmlichen Bits ist der, dass das Qubit beim Empfänger entweder durch Vertauschung mithilfe der Matrix $$ oder Transformation mithilfe der Matrix $$ gemappt werden muss.
+Bei der Quantenteleportation sind 2 Qubits in Form von Atomen an verschiedenen Orten durch Verschränkung verbunden. Bei einer Messung des Bits auf der ''Sender''-Seite wird die Superposition zerstört und beide Qubits nehmen zeitgleich den gleichen Zustand an. Da der Empfänger aber nicht wissen kann, wann der Sender das Bit betrachtet hat, muss über einen herkömmlichen Kanal ein Signal gesendet werden, dass den Empfänger imformiert, dass er sich das Qubit gefahrlos ansehen kann, ohne den Zustand zu verändern. Der zweite Grund für die Notwendigkeit der Übertragung eines Herkömmlichen Bits ist der, dass das Qubit beim Empfänger entweder durch Vertauschung mithilfe der Matrix $\begin{pmatrix} 
+    0 & 1 \\
+    1 & 0
+\end{pmatrix}$ oder Transformation mithilfe der Matrix $\begin{pmatrix} 
+    1 & 0 \\
+    0 & -1
+\end{pmatrix}$ gemappt werden muss.
 
-Um allerdings 2 verschränkte Qubits an verschiedene Orte zu bringen, muss entwedet ein Quantenkanal bestehen oder schon im Vorfeld eines der verschränkten Qubits vom Sender zum Empfänger oder vom Empfänger zum Sender gebracht werden.
+Um allerdings 2 verschränkte Qubits an verschiedene Orte zu bringen, muss entweder ein Quantenkanal bestehen oder schon im Vorfeld eines der verschränkten Qubits vom Sender zum Empfänger oder vom Empfänger zum Sender gebracht werden.
 
 Da die Übertragung des herkömmlichen Bits nicht zeitgleich möglich ist, stellt sich die Frage, in welcher Form eine Quantenteleportation dann schneller ist. Die Antwort hängt mit Quantenregistern zusammen, da auch für ein komplettes Register nur ein einziges herkömmliches Bit übertragen werden muss.
 
