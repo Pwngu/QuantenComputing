@@ -101,7 +101,7 @@ $\displaystyle\sum_{i=0}^{2^n-1}  |\alpha|^2 = 1$
 
 Unitär bedeutet soviel wie Umkehrbar. Eine uniätre Operation kann also rückgängig gemacht werden. Die Voraussetzung dafür ist, dass es nur eine möglichkeit gibt, auf den Endzustand der Operation zu kommen. Wenn ein Endzustand von 2 verschiedenen Anfangszuständen erreicht werden kann, so ist nicht eindeutig, welcher Zustand der Anfangszustand ist und die Operation ist nicht unitär.
 
-Rechenoperationen können auf einzelne Bits oder ganze Register ausgeführt werden. Da allerdings eine Rechenoperation auf ein ganzes Register auszuführen sehr schnell ziemlich kompliziert werden kann, führt man die Operation auf jedes Bit einzeln aus, wobei man das gleiche Gesamtergebnis erhält. Lokal ist eine Registertransformation, wenn daran für jede Operation konstant viele Qubits beteiligt sind.
+Rechenoperationen können auf einzelne Bits oder ganze Register ausgeführt werden. Da allerdings eine Rechenoperation auf ein ganzes Register auszuführen sehr schnell ziemlich kompliziert werden kann, wird die Operation auf jedes Bit einzeln ausgeführt, wobei das gleiche Gesamtergebnis entsteht. Lokal ist eine Registertransformation, wenn daran für jede Operation konstant viele Qubits beteiligt sind.
 
 \section{Hardware}
 \label{sec:hardware}
@@ -155,7 +155,7 @@ Wenn anstelle eines Lichtstrahles nur einzelne Photonen verwendet werden, zeigt 
 \subsubsection{Kernspinresonanz}
 \label{sec:kernspinresonanz}
 
-Kernspinresonanz ist der Name für einen phyiskalischen Effekt der in Form von Wechselwirkung zwischen Atomkernen und Magnetfeldern auftritt. Der Spin eines Moleküls kann durch Magnetfelder ausgerichtet werden, was ausgenutzt wird, um Quantenbits abzubilden und zu speichern. Durch unterschiedliche chemische Eigenschaften der Umgebung kann jedes Bit einzeln angesprochen werden. Mithilfe eines Hauptmagnetfeldes kann man die Zustande definieren, zum Beispiel als: $gleiche Ausrichtung = |0\rangle, im rechten Winkel = |1\rangle$;
+Kernspinresonanz ist der Name für einen phyiskalischen Effekt der in Form von Wechselwirkung zwischen Atomkernen und Magnetfeldern auftritt. Der Spin eines Moleküls kann durch Magnetfelder ausgerichtet werden, was ausgenutzt wird, um Quantenbits abzubilden und zu speichern. Durch unterschiedliche chemische Eigenschaften der Umgebung kann jedes Bit einzeln angesprochen werden. Mithilfe eines Hauptmagnetfeldes können die Zustande definiert werden, zum Beispiel als: $gleiche Ausrichtung = |0\rangle, im rechten Winkel = |1\rangle$;
 
 \subsubsection{Ionenfallen}
 \label{sec:ionenfallen}
@@ -168,7 +168,13 @@ Ionenfallen sind dazu da, um elektrisch geladene Moleküle oder Atome durch Magn
 \subsubsection{D-Wave Systems}
 \label{sec:dwave}
 
-D-Wave Systems ist ein 1999 gegründetes Amerikanischen Unternehmen, dass seit Jahren damit wirbt, den ersten und einzig wahren Quantencomputer herzustellen. D-Wave hat bereits Geräte an Lockhead-Martin, Google, NASA und die Kalifornische Universität verkauft.
+D-Wave Systems ist ein 1999 gegründetes Amerikanischen Unternehmen, dass seit Jahren damit wirbt, den ersten und einzig wahren Quantencomputer herzustellen. D-Wave Systems hat bereits Geräte an Lockhead-Martin, Google, NASA und die Kalifornische Universität verkauft.
+
+\begin{figure}[!htb]
+	\centering\includegraphics[width=0.8\textwidth]{images/dwave.jpg}
+	\caption{D-Wave Systems' Quanten Computer}
+	\label{dwave}
+\end{figure}
 
 Kritiker sind der Meinung, dass ein echter Quantencomputer erst in vielen Jahren möglich sein wird, falls überhaupt. Ein Google Test 2014 hat ergeben, dass keine Geschwindigkeitsveresserung festgestellt werden konnte. Anfang Dezember 2015 scheint durch eine weitere Google-Testreihe allerdings das Gegenteil bewiesen worden zu sein. In einem Test mit großen Bitmengen wurden laut Google Entwicklungsleiter Hartmut Neven eine Reihe herkömmlicher Großrechner zeitmäßig um Längen übertrumpft.
 
@@ -180,11 +186,11 @@ Eine Forschungsarbeit an der ETH Zürich hat ergeben, dass der Quantencomputer e
 %http://www.spektrum.de/news/daempfer-fuer-den-d-wave-quantencomputer/1296152
 %http://motherboard.vice.com/read/google-claims-its-d-wave-quantum-computer-is-the-real-deal
 
-Die Arbeitsweise wird auf der offiziellen Webseite von D-Wave erklärt, wobei die Optimierung durch ''quantum annealing'' (direkt übersetzt: Quanten glühen) als die einzige art des Quantencomputing dargestellt wird.
+Die Arbeitsweise wird auf der offiziellen Webseite von D-Wave Systems erklärt, wobei die Optimierung durch ''quantum annealing'' (direkt übersetzt: Quanten glühen) als die einzige art des Quantencomputing dargestellt wird.
 
 %http://www.dwavesys.com/quantum-computing
 
-Desweiteren findet man auf der offiziellen Webseite eine auflistung von Anwendungsgebieten, wobei die meisten auch als Mustererkennung und Vorraussagen bezeichnet werden könnten.
+Desweiteren findet sich auf der offiziellen Webseite eine auflistung von Anwendungsgebieten, wobei die meisten als Mustererkennung oder Vorraussagen kategorisiert werden können.
 
 %http://www.dwavesys.com/quantum-computing/industries
 
@@ -211,7 +217,7 @@ Zu den klassischen Kommunikationskanälen gehören eindeutig Kabel mit 1-n elekt
 
 Heutzutage zu klassichen Kommunikationskanälen, aber auch für die Übertragung von Qubits verwendbar, sind Glasfaserkabel. Im Klassischen Sinne wird Licht an und aus-geschalten, für Quantenkommunikation werden einzelne Qubits in form von Photonen übertragen.
 
-Wenn man von Quantenkommunikationskanälen spricht, wird aber meist Verschränkung zwischen 2 Qubits gemeint. Dabei wird unterschieden zwischen rauschfreien und verrauschten Kanälen unterscheiden, wobei durch mehrfache Übertragungen mit klassischer Zusatzinformation aus einem verrauschten Kanal Stück für Stück ein rauschfreier Kanal machen lässt.
+Wenn von Quantenkommunikationskanälen gesprochen wird, wird aber meist Verschränkung zwischen 2 Qubits gemeint. Dabei wird unterschieden zwischen rauschfreien und verrauschten Kanälen unterscheiden, wobei durch mehrfache Übertragungen mit klassischer Zusatzinformation aus einem verrauschten Kanal Stück für Stück ein rauschfreier Kanal machen lässt.
 
 \subsubsection{Photonzählung}
 \label{sec:photonzaelung}
