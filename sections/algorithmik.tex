@@ -101,7 +101,7 @@ Dadurch werden also ungefähr 50\% der gesendeten bits für die Schlüsselgeneri
     \end{minipage}
 \end{table}
 
-In diesem Beispiel sind die \textbf{Fett} hervorgehoben Basen gleich, also wäre der generiert Schlüssel von Alice und Bob 10100; jeweils Photon 1, 3, 5, 6, 7 werden verwendet, die anderen werden verworfen.
+In diesem Beispiel sind die \textbf{Fett} hervorgehoben Basen gleich, also wäre der generierte Schlüssel von Alice und Bob 10100; jeweils Photon 1, 3, 5, 6, 7 werden verwendet, die anderen werden verworfen.
 
 
 \subsubsection{Abhörsicherheit}
@@ -202,7 +202,7 @@ Dieser Algorithmus dient auch zur exponentiell schnelleren Lösung von Blackbox-
 
 \subsubsection{Quanten Phasen Näherungs-Algorithmus}
 
-Aus der englischen Wikipedia:\cite{quantenalgorithmgwiki}
+Aus der englischen Wikipedia: \cite{quantenalgorithmgwiki}
 \begin{quote}
     \textit{The quantum phase estimation algorithm is used to determine the eigenphase of an eigenvector of a unitary gate given a quantum state proportional to the eigenvector and access to the gate.}
 \end{quote}
@@ -247,7 +247,7 @@ Durch Grover's Algorithmus ergibt sich eine beträchtliche quadratische Beschleu
 \label{sec:Quanten Programmierung}
 
 Es gibt bereits einige Quantenprogrammierprachen, welche bereits zum Ausdruck von Quantenalgorithmen verwendet werden können.
-Im Moment gibt es 2 Gruppen von Quantenprogrammiersprachen: Imperative und Funktionale.
+Diese können grob in 2 Gruppen von Quantenprogrammiersprachen eingeteilt werden: Imperative und Funktionale.
 
 Die 2 bekanntesten der ersten Gruppe sind QCL \cite{qcl} und LanQ \cite{lanq}.
 
@@ -264,13 +264,13 @@ Es ist quasi ein Array von qubits: \cite{quantenprogwiki}
 \begin{lstlisting}
 qureg x1[2]; // 2-qubit quantum register x1
 qureg x2[2]; // 2-qubit quantum register x2
-H(x1); // Hadamard operation on x1
-H(x2[1]); // Hadamard operation on the first qubit of the register x2
+H(x1);       // Hadamard operation on x1
+H(x2[1]);    // Hadamard operation on the first qubit of the register x2
 \end{lstlisting}
 
 \newpage
 
-Außerdem kann, da die Quantenoperationen nur Simuliert werden, der Status des Programms abgerufen werden: \cite{quantenprogwiki}
+Außerdem kann, da die Quantenoperationen nur simuliert werden, der Status des Programms abgerufen werden: \cite{quantenprogwiki}
 
 \begin{lstlisting}
 qcl> dump
